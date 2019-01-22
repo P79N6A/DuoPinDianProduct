@@ -7,10 +7,15 @@
 //
 
 #import "HTTPRequestManager.h"
-
+#import "HTTPRequestUrl.h"
 NS_ASSUME_NONNULL_BEGIN
 
 @interface NetManager : HTTPRequestManager
+//会员等级
+#define DPDcustomerRankList @"/miniapp/customerRankList"
++(void)DPDcustomerRankListSuccess:(void(^) (BOOL isSuccess, id responseObject))success
+                          failure:(void(^) (NSError *error))failure;
+
 
 @end
 
