@@ -17,6 +17,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //打开crash友好处理
+    [NSObject openAllSafeProtectorWithIsDebug:NO block:^(NSException *exception, LSSafeProtectorCrashType crashType) {
+        NSLog(@"exception :%@,%@",exception.userInfo,crashType);
+    }];
     return YES;
 }
 
